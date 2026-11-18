@@ -96,10 +96,8 @@ Fastest Reporter path seen: **hotkey → click widget → Report → one sentenc
 ## 4. Friction points
 
 ### Get the app
-1. **Fact:** Download only shows a toast, so installation and the first launch after it aren't shown. **Unknown:** how big the installer is, whether it's signed, and how an Admin pushes it across a fleet.
 2. **Fact:** The desktop app needs a server URL plus a device code approved in the browser, and the console is invite-only ("Unknown accounts are refused"). **Inference:** a QA, support or PM person who hasn't been invited is stuck at the very first step, and the prototype doesn't show how an invite reaches them.
 3. **Fact:** First run and Sign in are separate screens in the prototype's nav. **Unknown:** the real order on first launch, and what a reporter sees if they pick "Use without an account" and then try to report.
-4. **Fact:** The landing page lists Trello, Jira and Linear as destinations, but the console shows them as "Available", not connected. Android is "soon" and Linux is "next". **Inference:** the landing page promises more than the console currently shows as connected.
 
 ### Capture
 5. **Fact:** The tray has 15 actions. Home shows 6 capture tiles and 4 tools. The prototype also has video and GIF recording, a video editor, present mode, pins, color picker, measure and workflows. **Inference:** the bug-report path ("two seconds") shares space with a full screenshot and recording suite, so a first-time reporter has to find the one path that matters.
@@ -108,8 +106,6 @@ Fastest Reporter path seen: **hotkey → click widget → Report → one sentenc
 
 ### Report
 8. **Fact:** Reporting the checkout bug from the desktop created a **new issue (FIX-143) and a second Tazko card**, although FIX-142 (the same bug, 17 events) was open. The report form showed no "this looks like FIX-142" hint. In contrast, the Claude path ("/fixit:report") said it matched an open issue and added an occurrence instead. FIX-142's "Possible duplicates" afterwards still listed only FIX-134, not FIX-143. **Inference:** in today's journey the Triager's core pain (five people, five reports) still happens on the main reporter channel.
-9. **Fact:** Redaction counts disagree. The editor says "2 items blurred: card number and account name", while the report form says "3 items blurred: 2 email addresses and 1 card number". **Inference:** the reporter and the Admin can't tell what was actually blurred, which undermines the Admin promise.
-10. **Fact:** The device is shown inconsistently. The editor says Windows 11 and the OS toggle is set to Windows, but the report form says "MacBook Air · macOS 15.1".
 11. **Fact:** Besides the one sentence, the form also shows Expected, Actual, How often (Always, Sometimes or Once) and Severity. **Unknown:** which fields are required. **Inference:** if reporters feel they must fill them all, the "one sentence" promise weakens.
 
 ### Triage
@@ -119,7 +115,6 @@ Fastest Reporter path seen: **hotkey → click widget → Report → one sentenc
 
 ### Fix
 15. **Fact:** The Tazko card for **FIX-138** (a TypeError on /orders) shows the repro steps of the **3DS checkout bug** (FIX-142) and a "Replay 0:47" link. The console calls the same card "Orders list crash" while Tazko calls it "[FIX-138] TypeError in OrdersList". **Inference:** if AI-written repro steps can attach to the wrong issue, the fixer is misled. This goes straight to the "AI output verified" criterion.
-16. **Fact:** The fixer gets rich context: replay, timeline, network, console, symbolicated stack, suspected files, and `fixit pull` / MCP for agents. No friction was seen in this stage beyond item 15.
 
 ### Close the loop
 17. **Fact:** The reporter banner asks about **FIX-137** ("Export CSV downloads an empty file"), but "Yes, fixed" answers "Thanks. **FIX-142** is closed." **Inference:** the most visible part of "close the loop" for the reporter points at the wrong issue.
